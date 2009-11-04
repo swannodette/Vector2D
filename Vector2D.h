@@ -49,9 +49,10 @@
 - (BOOL) isEqual:(Vector2D*)other;
 - (BOOL) isZero;
 
-- (void) clean;
-- (void) zero;
-- (void) normalize;
+- (Vector2D*) clean;
+- (Vector2D*) zero;
+- (Vector2D*) normalize;
+- (Vector2D*) limit:(float)limit;
 
 - (Vector2D*) add:(Vector2D*)other;
 - (Vector2D*) sub:(Vector2D*)other;

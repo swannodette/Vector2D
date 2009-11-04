@@ -174,19 +174,20 @@ static Vector2D* xy = nil;
   return isZero(x*x + y*y);
 }
 
-- (void) clean
+- (Vector2D*) clean
 {
   if(isZero(x)) x = 0.0f;
   if(isZero(y)) y = 0.0f;
 }
 
-- (void) zero
+- (Vector2D*) zero
 {
   x = 0.0f;
   y = 0.0f;
+  return self;
 }
 
-- (void) normalize
+- (Vector2D*) normalize
 {
   float lengthsq = x*x + y*y;
   if (isZero(lengthsq)) 
@@ -200,6 +201,12 @@ static Vector2D* xy = nil;
     x *= factor;
     y *= factor;
   }
+  return self;
+}
+
+- (Vector2D*) limit:(float)limit
+{
+  return [[self normalize] mult:limit];
 }
 
 - (Vector2D*) add:(Vector2D*)other
