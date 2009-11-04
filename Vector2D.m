@@ -106,14 +106,14 @@ static Vector2D* xy = nil;
   return xy;  
 }
 
+#pragma mark -
+#pragma mark Instance Methods
+
 - (Vector2D*) init
 {
   self = [self initWithX:0.0f Y:0.0f];
   return self;
 }
-
-#pragma mark -
-#pragma mark Instance Methods
 
 - (Vector2D*) initWithX:(float)nx Y:(float)ny
 {
