@@ -24,9 +24,14 @@ BOOL areEqual(float a, float b)
 #pragma mark -
 #pragma mark new
 
-+ (Vector2D*) newX:(float)x Y:(float)y
++ (Vector2D*) withX:(float)x Y:(float)y
 {
   return [[[Vector2D alloc] initWithX:x Y:y] autorelease];
+}
+
++ (Vector2D*) newWithX:(float)x Y:(float)y
+{
+  return [[Vector2D alloc] initWithX:x Y:y];
 }
 
 #pragma mark -
@@ -37,7 +42,7 @@ BOOL areEqual(float a, float b)
   return [[[v1 copy] add:v2] autorelease];
 }
 
-+ (Vector2D*) sub:(Vector2D*)v1 To:(Vector2D*)v2
++ (Vector2D*) sub:(Vector2D*)v1 With:(Vector2D*)v2
 {
   return [[[v1 copy] sub:v2] autorelease];
 }
@@ -69,7 +74,7 @@ static Vector2D* xy = nil;
 {
   if(nil == xAxis)
   {
-    xAxis = [Vector2D newX:1.0f Y:0.0f];    
+    xAxis = [Vector2D newWithX:1.0f Y:0.0f];    
   }
   return xAxis;
 }
@@ -78,7 +83,7 @@ static Vector2D* xy = nil;
 {
   if(nil == yAxis)
   {
-    yAxis = [Vector2D newX:0.0f Y:1.0f];    
+    yAxis = [Vector2D newWithX:0.0f Y:1.0f];    
   }
   return yAxis;
 }
@@ -87,7 +92,7 @@ static Vector2D* xy = nil;
 {
   if(nil == origin)
   {
-    origin = [Vector2D newX:0.0f Y:0.0f];    
+    origin = [Vector2D newWithX:0.0f Y:0.0f];    
   }
   return origin;
 }
@@ -96,7 +101,7 @@ static Vector2D* xy = nil;
 {
   if(nil == xy)
   {
-    xy = [Vector2D newX:1.0f Y:1.0f];    
+    xy = [Vector2D newWithX:1.0f Y:1.0f];    
   }
   return xy;  
 }
@@ -119,6 +124,11 @@ static Vector2D* xy = nil;
     y = ny;
   }
   return self;
+}
+
+- (Vector2D*) copyWithZone:(NSZone *)zone
+{
+  return [[Vector2D alloc] initWithX:x Y:y];
 }
      
 - (NSString*) description
@@ -216,7 +226,7 @@ static Vector2D* xy = nil;
 
 - (Vector2D*) perp
 {
-  return [Vector2D newX:-y Y:x];
+  return [Vector2D newWithX:-y Y:x];
 }
 
 - (float) perpDot:(Vector2D*)other

@@ -11,7 +11,7 @@
 #define kHalfPI     1.5707963267948966192313216916398f
 #define kTwoPI      2.0f*kPI
 
-@interface Vector2D : NSObject 
+@interface Vector2D : NSObject <NSCopying>
 {
 @public
   float x;
@@ -20,10 +20,11 @@
 
 // Class Methods
 
-+ (Vector2D*) newX:(float)x Y:(float)y;
++ (Vector2D*) withX:(float)x Y:(float)y;
++ (Vector2D*) newWithX:(float)x Y:(float)y;
 
 + (Vector2D*) add:(Vector2D*)v1 To:(Vector2D*)v2;
-+ (Vector2D*) sub:(Vector2D*)v1 To:(Vector2D*)v2;
++ (Vector2D*) sub:(Vector2D*)v1 With:(Vector2D*)v2;
 + (Vector2D*) mult:(Vector2D*)v With:(float)scalar;
 + (Vector2D*) div:(Vector2D*)v With:(float)scalar;
 + (float) dot:(Vector2D*)v1 With:(Vector2D*)v2;
@@ -36,6 +37,8 @@
 // Instance Methods
 
 - (Vector2D*) initWithX:(float)x Y:(float)y;
+- (Vector2D*) copyWithZone:(NSZone *)zone;
+
 - (NSString*) description;
 
 - (float) length;
