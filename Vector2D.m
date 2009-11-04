@@ -7,6 +7,7 @@
 //
 
 #import "Vector2D.h"
+#import <stdlib.h>
 #import <math.h>
 
 BOOL isZero(float a)
@@ -60,6 +61,16 @@ BOOL areEqual(float a, float b)
 + (float) dot:(Vector2D*)v1 With:(Vector2D*)v2
 {
   return [v1 dot:v2];
+}
+
++ (Vector2D*) zero
+{
+  return [Vector2D withX:0.0f Y:0.0f];
+}
+
++ (Vector2D*) randomInside:(CGRect)rect
+{
+  return [Vector2D withX:(rect.origin.x + (arc4random() % rect.size.width)) Y:(rect.origin.y + (arc4random() % rect.size.height))];
 }
 
 #pragma mark -
