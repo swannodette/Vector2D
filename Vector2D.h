@@ -33,6 +33,7 @@
 + (Vector2D*) yAxis;
 + (Vector2D*) origin;
 + (Vector2D*) xy;
++ (Vector2D*) zero;
 
 // Instance Methods
 

@@ -62,6 +62,11 @@ BOOL areEqual(float a, float b)
   return [v1 dot:v2];
 }
 
++ (Vector2D*) zero
+{
+  return [Vector2D withX:0.0f Y:0.0f];
+}
+
 #pragma mark -
 #pragma mark Useful Constants
 
