@@ -70,7 +70,7 @@ BOOL areEqual(float a, float b)
 
 + (Vector2D*) randomInside:(CGRect)rect
 {
-  return [Vector2D withX:(rect.origin.x + (arc4random() % rect.size.width)) Y:(rect.origin.y + (arc4random() % rect.size.height))];
+  return [Vector2D withX:(rect.origin.x + (arc4random() % (int)rect.size.width)) Y:(rect.origin.y + (arc4random() % (int)rect.size.height))];
 }
 
 #pragma mark -
