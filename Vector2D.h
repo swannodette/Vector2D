@@ -34,6 +34,7 @@
 + (Vector2D*) origin;
 + (Vector2D*) xy;
 + (Vector2D*) zero;
++ (Vector2D*) randomInside:(CGRect)rect;
 
 // Instance Methods
 
