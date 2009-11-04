@@ -23,11 +23,11 @@
 + (Vector2D*) withX:(float)x Y:(float)y;
 + (Vector2D*) newWithX:(float)x Y:(float)y;
 
-+ (Vector2D*) add:(Vector2D*)v1 To:(Vector2D*)v2;
-+ (Vector2D*) sub:(Vector2D*)v1 With:(Vector2D*)v2;
-+ (Vector2D*) mult:(Vector2D*)v With:(float)scalar;
-+ (Vector2D*) div:(Vector2D*)v With:(float)scalar;
-+ (float) dot:(Vector2D*)v1 With:(Vector2D*)v2;
++ (Vector2D*) add:(Vector2D*)v1 to:(Vector2D*)v2;
++ (Vector2D*) sub:(Vector2D*)v1 with:(Vector2D*)v2;
++ (Vector2D*) mult:(Vector2D*)v with:(float)scalar;
++ (Vector2D*) div:(Vector2D*)v with:(float)scalar;
++ (float) dot:(Vector2D*)v1 with:(Vector2D*)v2;
 
 + (Vector2D*) xAxis;
 + (Vector2D*) yAxis;

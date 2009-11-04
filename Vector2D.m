@@ -38,27 +38,27 @@ BOOL areEqual(float a, float b)
 #pragma mark -
 #pragma mark Non-mutating Class methods
 
-+ (Vector2D*) add:(Vector2D*)v1 To:(Vector2D*)v2
++ (Vector2D*) add:(Vector2D*)v1 to:(Vector2D*)v2
 {
   return [[[v1 copy] add:v2] autorelease];
 }
 
-+ (Vector2D*) sub:(Vector2D*)v1 With:(Vector2D*)v2
++ (Vector2D*) sub:(Vector2D*)v1 with:(Vector2D*)v2
 {
   return [[[v1 copy] sub:v2] autorelease];
 }
 
-+ (Vector2D*) mult:(Vector2D*)v With:(float)scalar
++ (Vector2D*) mult:(Vector2D*)v with:(float)scalar
 {
   return [[[v copy] mult:scalar] autorelease];
 }
 
-+ (Vector2D*) div:(Vector2D*)v With:(float)scalar
++ (Vector2D*) div:(Vector2D*)v with:(float)scalar
 {
   return [[[v copy] div:scalar] autorelease];
 }
 
-+ (float) dot:(Vector2D*)v1 With:(Vector2D*)v2
++ (float) dot:(Vector2D*)v1 with:(Vector2D*)v2
 {
   return [v1 dot:v2];
 }
